@@ -20,12 +20,25 @@ Control your VPN Exit Controller directly from Raycast! This extension provides 
 2. **Node.js**: Version 22.14 or higher
 3. **VPN Exit Controller**: Your VPN controller must be running and accessible
 
-### Steps
+### Method 1: Homebrew (Recommended)
+
+```bash
+# Add the tap
+brew tap rickoslyder/vpn-tools https://github.com/rickoslyder/homebrew-vpn-tools
+
+# Install the extension
+brew install vpn-controller-raycast
+
+# Configure
+vpn-raycast config
+```
+
+### Method 2: Git Clone
 
 1. **Clone the repository**:
    ```bash
-   git clone <repository-url>
-   cd vpn-exit-controller-raycast
+   git clone https://github.com/rickoslyder/vpn-controller-raycast.git
+   cd vpn-controller-raycast
    ```
 
 2. **Install dependencies**:
