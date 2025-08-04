@@ -1,0 +1,30 @@
+<svg width="512" height="512" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+  <rect width="512" height="512" rx="128" fill="#1a1a2e"/>
+  <g transform="translate(256, 256)">
+    <circle r="160" fill="none" stroke="#16213e" stroke-width="8"/>
+    <circle r="140" fill="none" stroke="#0f3460" stroke-width="6"/>
+    <circle r="120" fill="none" stroke="#e94560" stroke-width="4"/>
+    <g transform="rotate(0)">
+      <circle cx="0" cy="-140" r="20" fill="#e94560"/>
+      <line x1="0" y1="0" x2="0" y2="-120" stroke="#e94560" stroke-width="4"/>
+    </g>
+    <g transform="rotate(72)">
+      <circle cx="0" cy="-140" r="20" fill="#0f3460"/>
+      <line x1="0" y1="0" x2="0" y2="-120" stroke="#0f3460" stroke-width="4"/>
+    </g>
+    <g transform="rotate(144)">
+      <circle cx="0" cy="-140" r="20" fill="#16213e"/>
+      <line x1="0" y1="0" x2="0" y2="-120" stroke="#16213e" stroke-width="4"/>
+    </g>
+    <g transform="rotate(216)">
+      <circle cx="0" cy="-140" r="20" fill="#0f3460"/>
+      <line x1="0" y1="0" x2="0" y2="-120" stroke="#0f3460" stroke-width="4"/>
+    </g>
+    <g transform="rotate(288)">
+      <circle cx="0" cy="-140" r="20" fill="#e94560"/>
+      <line x1="0" y1="0" x2="0" y2="-120" stroke="#e94560" stroke-width="4"/>
+    </g>
+    <circle r="40" fill="#ffffff"/>
+    <text text-anchor="middle" dominant-baseline="middle" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#1a1a2e">VPN</text>
+  </g>
+</svg>

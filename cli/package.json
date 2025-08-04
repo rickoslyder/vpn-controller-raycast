@@ -1,0 +1,31 @@
+{
+  "name": "vpn-raycast-cli",
+  "version": "1.0.0",
+  "description": "CLI tool for managing VPN Exit Controller Raycast Extension",
+  "main": "index.js",
+  "bin": {
+    "vpn-raycast": "./index.js"
+  },
+  "scripts": {
+    "start": "node index.js"
+  },
+  "keywords": [
+    "vpn",
+    "raycast",
+    "cli",
+    "extension"
+  ],
+  "author": "VPN Exit Controller",
+  "license": "MIT",
+  "dependencies": {
+    "commander": "^11.1.0",
+    "chalk": "^4.1.2",
+    "ora": "^5.4.1",
+    "prompts": "^2.4.2",
+    "dotenv": "^16.3.1",
+    "node-fetch": "^3.3.2"
+  },
+  "engines": {
+    "node": ">=16.0.0"
+  }
+}

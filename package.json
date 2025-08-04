@@ -1,0 +1,109 @@
+{
+  "$schema": "https://www.raycast.com/schemas/extension.json",
+  "name": "vpn-exit-controller",
+  "title": "VPN Exit Controller",
+  "description": "Control VPN exit nodes across multiple countries with intelligent load balancing",
+  "icon": "icon.png",
+  "author": "admin",
+  "categories": ["Productivity", "Developer Tools"],
+  "license": "MIT",
+  "commands": [
+    {
+      "name": "index",
+      "title": "VPN Control Center",
+      "subtitle": "Manage VPN Exit Nodes",
+      "description": "Start, stop, and monitor VPN nodes across different countries",
+      "mode": "view"
+    },
+    {
+      "name": "manage-nodes",
+      "title": "Manage Active Nodes",
+      "subtitle": "View and control running VPN nodes",
+      "description": "List all active VPN connections with detailed metrics",
+      "mode": "view"
+    },
+    {
+      "name": "quick-toggle",
+      "title": "Toggle VPN",
+      "subtitle": "Quick toggle for specific country",
+      "description": "Start or stop VPN for a country",
+      "mode": "no-view",
+      "arguments": [
+        {
+          "name": "country",
+          "placeholder": "Country code (us, uk, de, jp...)",
+          "type": "text",
+          "required": true
+        }
+      ]
+    },
+    {
+      "name": "proxy-info",
+      "title": "Proxy URLs",
+      "subtitle": "View proxy endpoints",
+      "description": "Get proxy URLs for each country",
+      "mode": "view"
+    }
+  ],
+  "preferences": [
+    {
+      "name": "apiUrl",
+      "title": "API URL",
+      "description": "VPN Controller API URL",
+      "type": "textfield",
+      "default": "https://vpn.rbnk.uk",
+      "required": true
+    },
+    {
+      "name": "apiUsername",
+      "title": "API Username",
+      "description": "API authentication username",
+      "type": "textfield",
+      "default": "admin",
+      "required": true
+    },
+    {
+      "name": "apiPassword",
+      "title": "API Password",
+      "description": "API authentication password",
+      "type": "password",
+      "required": true
+    },
+    {
+      "name": "favoriteCountries",
+      "title": "Favorite Countries",
+      "description": "Comma-separated country codes (us,uk,de)",
+      "type": "textfield",
+      "default": "us,uk,de,jp"
+    },
+    {
+      "name": "refreshInterval",
+      "title": "Refresh Interval",
+      "description": "How often to refresh node status (seconds)",
+      "type": "textfield",
+      "default": "5",
+      "required": false
+    }
+  ],
+  "dependencies": {
+    "@raycast/api": "^1.81.0",
+    "@raycast/utils": "^1.17.0",
+    "node-fetch": "^3.3.2"
+  },
+  "devDependencies": {
+    "@raycast/eslint-config": "^1.0.11",
+    "@types/node": "^22.7.5",
+    "@types/react": "^18.3.11",
+    "eslint": "^8.57.1",
+    "prettier": "^3.3.3",
+    "typescript": "^5.6.3"
+  },
+  "scripts": {
+    "build": "ray build --skip-types -e dist -o dist",
+    "dev": "ray develop",
+    "fix-lint": "ray lint --fix",
+    "lint": "ray lint",
+    "prepublishOnly": "echo '\\n\\nIt looks like you are trying to publish the Raycast extension to npm.\\n\\nIf you did intend to publish it to npm, remove the prepublishOnly script and rerun the command.\\nIf you wanted to publish it to the Raycast Store instead, use \"npm run publish\" instead.\\n\\n' && exit 1",
+    "publish": "ray publish"
+  }
+}

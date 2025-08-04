@@ -1,0 +1,8 @@
+Note: Raycast requires a 512x512 PNG icon named "icon.png" in the assets folder.
+
+The icon.svg file can be converted to PNG using:
+- Online tools like CloudConvert or Convertio
+- Command line: convert icon.svg -resize 512x512 icon.png (requires ImageMagick)
+- Any graphics editor like Sketch, Figma, or GIMP
+
+For now, you can use any 512x512 PNG as a placeholder to test the extension.
