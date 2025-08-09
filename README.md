@@ -1,13 +1,19 @@
 # VPN Exit Controller for Raycast
 
-Control your VPN Exit Controller directly from Raycast! This extension provides quick access to manage VPN nodes across multiple countries, view proxy information, and monitor node performance.
+Control your VPN Exit Controller directly from Raycast! This extension provides quick access to manage VPN containers that function as both **Tailscale exit nodes** and **proxy servers** across multiple countries. Get dual-mode VPN access with full network routing or application-specific proxying.
 
 ## Features
 
+### 🌐 Dual-Mode VPN Access
+- **Tailscale Exit Nodes**: Route entire devices through VPN containers
+- **Direct Proxy Access**: Use containers as HTTP/HTTPS/SOCKS5 proxies via Tailscale IPs
+- **Legacy Proxy URLs**: Access via country-specific URLs (proxy-us.rbnk.uk)
+
+### 🎛️ Management & Monitoring
 - **🌍 VPN Control Center**: Visual country grid with one-click VPN control
-- **📊 Active Node Management**: Monitor running nodes with real-time metrics
-- **⚡ Quick Toggle**: Start/stop VPN with a simple command (e.g., "Toggle US VPN")
-- **🔗 Proxy Information**: View and copy proxy URLs with usage examples
+- **📊 Active Node Management**: Monitor running containers with real-time metrics
+- **⚡ Quick Toggle**: Start/stop VPN containers with simple commands
+- **🔗 Proxy Information**: View and copy Tailscale IPs and proxy URLs
 - **📈 Performance Monitoring**: CPU, memory, and network statistics
 - **🚀 Speed Testing**: Run speed tests on active nodes
 - **🔄 Auto-refresh**: Real-time updates with configurable intervals
@@ -109,15 +115,16 @@ Quick command to toggle VPN for a specific country.
 - "Toggle VPN uk" - Toggle UK VPN
 - "Toggle VPN de" - Toggle Germany VPN
 
-### 4. Proxy URLs
-**Trigger**: "Proxy URLs"
+### 4. Proxy URLs & Exit Nodes
+**Trigger**: "Proxy URLs" or "Exit Nodes"
 
-View and copy proxy endpoints with:
-- HTTP/HTTPS proxy URLs
-- SOCKS5 proxy URLs
-- Usage examples for different programming languages
-- One-click copy functionality
-- Test commands
+View and copy connection information with:
+- **Tailscale Exit Node IDs** for full device routing
+- **Direct Tailscale Proxy IPs** (HTTP:3128, SOCKS5:1080)
+- **Legacy proxy URLs** for external access
+- Usage examples for both approaches
+- One-click copy functionality for IPs and commands
+- Test commands for validation
 
 **Keyboard Shortcuts**:
 - `⌘ + H`: Copy HTTP proxy URL
@@ -126,23 +133,29 @@ View and copy proxy endpoints with:
 
 ## Usage Examples
 
-### Starting a VPN
+### Starting a VPN Container
 1. Open Raycast (`⌘ + Space`)
 2. Type "VPN"
 3. Select country and press Enter
-4. VPN starts automatically
+4. VPN container starts automatically (available as both exit node and proxy)
+
+### Using as Tailscale Exit Node
+1. Start VPN container via Raycast (e.g., US)
+2. Open terminal: `tailscale status --peers | grep exit-us`
+3. Enable exit node: `tailscale up --exit-node=exit-us-server123`
+4. All device traffic now routes through US
+
+### Using as Direct Proxy
+1. Start VPN container via Raycast
+2. Type "Proxy" in Raycast to get Tailscale IP
+3. Copy Tailscale IP (e.g., 100.86.140.98)
+4. Use as proxy: `curl -x http://100.86.140.98:3128 https://ipinfo.io/ip`
 
 ### Quick Toggle
 1. Open Raycast
 2. Type "Toggle VPN us"
 3. Press Enter
-4. US VPN toggles on/off
-
-### Copying Proxy URL
-1. Open Raycast
-2. Type "Proxy"
-3. Find active proxy
-4. Press `⌘ + C` to copy URL
+4. US VPN container toggles on/off
 
 ## Troubleshooting
 
